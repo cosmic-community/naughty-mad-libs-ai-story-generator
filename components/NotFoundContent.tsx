@@ -53,7 +53,7 @@ export default function NotFoundContent() {
           >
             <ArrowLeft className="w-5 h-5" />
             <span>Go Back</span>
-          </button>
+          </motion.button>
         </motion.div>
 
         <motion.div
