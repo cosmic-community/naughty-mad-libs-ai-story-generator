@@ -7,7 +7,7 @@ import { Clock, Users, Zap } from 'lucide-react';
 
 export default function TemplateCard({ template, onClick }: TemplateCardProps) {
   const themeColor = getThemeColor(template.metadata.theme.value);
-  const difficultyColor = getDifficultyColor(template.metadata.difficulty_level?.value || 'medium');
+  const difficultyColor = getDifficultyColor(template.metadata.difficulty_level?.value || 'Medium');
 
   return (
     <motion.div
@@ -35,7 +35,7 @@ export default function TemplateCard({ template, onClick }: TemplateCardProps) {
               {formatTheme(template.metadata.theme.value)}
             </span>
             <span className={`px-3 py-1 rounded-full text-xs font-medium ${difficultyColor}`}>
-              {formatDifficultyLevel(template.metadata.difficulty_level?.value || 'medium')}
+              {formatDifficultyLevel(template.metadata.difficulty_level?.value || 'Medium')}
             </span>
           </div>
           

@@ -1,4 +1,3 @@
-// app/templates/[slug]/page.tsx
 import { getMadLibsTemplate, getStoryPromptForTemplate } from '@/lib/cosmic'
 import { MadLibsTemplate, StoryPrompt } from '@/types'
 import { notFound } from 'next/navigation'

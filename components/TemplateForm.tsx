@@ -90,7 +90,7 @@ export default function TemplateForm({ template, storyPrompt }: TemplateFormProp
         </button>
 
         <div className={`inline-block px-4 py-2 rounded-full bg-gradient-to-r ${themeColor} text-white text-sm font-medium mb-4`}>
-          {formatTheme(template.metadata.theme.value)} • {formatDifficultyLevel(template.metadata.difficulty_level?.value || 'medium')}
+          {formatTheme(template.metadata.theme.value)} • {formatDifficultyLevel(template.metadata.difficulty_level?.value || 'Medium')}
         </div>
 
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
