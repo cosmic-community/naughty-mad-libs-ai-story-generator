@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+@layer components {
+  .content-warning {
+    @apply bg-red-100 border border-red-300 text-red-800 px-4 py-2 rounded-lg text-sm font-medium;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-gray-700 font-medium py-3 px-6 rounded-xl border border-gray-200 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 p-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.02];
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white/80 backdrop-blur-sm;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+  }
+
+  .error-message {
+    @apply text-red-600 text-sm mt-1;
+  }
+
+  .story-text {
+    @apply text-gray-800 leading-relaxed text-lg;
+  }
+
+  .theme-gradient {
+    @apply bg-gradient-to-r;
+  }
+
+  .loading-dots::after {
+    content: '';
+    animation: dots 1.5s infinite;
+  }
+
+  @keyframes dots {
+    0%, 20% { content: ''; }
+    40% { content: '.'; }
+    60% { content: '..'; }
+    80%, 100% { content: '...'; }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
+
+/* Age verification modal styles */
+.age-verification-backdrop {
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Social sharing button styles */
+.social-btn {
+  @apply inline-flex items-center justify-center w-12 h-12 rounded-full transition-all duration-200 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.social-btn.twitter {
+  @apply bg-blue-500 hover:bg-blue-600 text-white focus:ring-blue-500;
+}
+
+.social-btn.facebook {
+  @apply bg-blue-600 hover:bg-blue-700 text-white focus:ring-blue-600;
+}
+
+.social-btn.whatsapp {
+  @apply bg-green-500 hover:bg-green-600 text-white focus:ring-green-500;
+}
+
+/* Template card hover effects */
+.template-card {
+  @apply transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl;
+}
+
+.template-card::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transform -skew-x-12 -translate-x-full transition-all duration-700;
+}
+
+.template-card:hover::before {
+  @apply opacity-100 transform -skew-x-12 translate-x-full;
+}
+
+/* Story result animations */
+.story-reveal {
+  animation: storyReveal 0.8s ease-out forwards;
+}
+
+@keyframes storyReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Form step progress indicator */
+.step-indicator {
+  @apply relative w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-300;
+}
+
+.step-indicator.active {
+  @apply bg-primary-500 text-white shadow-lg scale-110;
+}
+
+.step-indicator.completed {
+  @apply bg-green-500 text-white;
+}
+
+.step-indicator.pending {
+  @apply bg-gray-200 text-gray-500;
+}
+
+/* Responsive design improvements */
+@media (max-width: 640px) {
+  .card {
+    @apply p-4;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    @apply py-2 px-4 text-sm;
+  }
+}
