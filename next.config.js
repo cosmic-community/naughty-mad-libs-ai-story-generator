@@ -7,6 +7,8 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
+  // Ensure proper output for Vercel
+  output: 'standalone',
 }
 
 module.exports = nextConfig
