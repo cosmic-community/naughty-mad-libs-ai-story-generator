@@ -28,7 +28,7 @@ export default function TemplateForm({ template, storyPrompt }: TemplateFormProp
       // Validate form data
       const validationErrors = validateFormData(data, template.metadata.questions);
       if (validationErrors.length > 0) {
-        setError(validationErrors[0]);
+        setError(validationErrors[0] || 'Validation error occurred');
         setIsGenerating(false);
         return;
       }
