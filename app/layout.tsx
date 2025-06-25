@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { getSiteSettings } from '@/lib/cosmic'
@@ -41,7 +41,13 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
     },
-    viewport: 'width=device-width, initial-scale=1',
+  }
+}
+
+export async function generateViewport(): Promise<Viewport> {
+  return {
+    width: 'device-width',
+    initialScale: 1,
     themeColor: '#e11d48',
   }
 }
